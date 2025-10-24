@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div class="app">
+        <h3>Hej från Flask – index!</h3>
+            <form>
+                <input type="text" placeholder="Sök konst..." />
+                <button type="button">Sök</button>
+            </form>
+    </div>
+
+  </body>
+</html>
