@@ -1,7 +1,7 @@
-# tests/test_husky.py
 import re
 import app.main as main
 from unittest.mock import Mock
+
 
 def test_husky_button_shows_husky(monkeypatch):
     # Fejka Dog API-svar för husky (lista -> appen väljer en)
@@ -32,3 +32,4 @@ def test_husky_button_shows_husky(monkeypatch):
     assert m, "Ingen hundbild renderades"
     src = m.group(1)
     assert "husky" in src, "Bilden ser inte ut att vara en husky"
+``
