@@ -2,6 +2,7 @@ import re
 import app.main as main
 from unittest.mock import Mock
 
+
 def test_bulldog_french_button_shows_bulldog_french(monkeypatch):
     fake = Mock()
     fake.status_code = 200
