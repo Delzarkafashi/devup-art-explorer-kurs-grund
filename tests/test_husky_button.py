@@ -1,6 +1,6 @@
 # tests/test_husky.py
 import re
-import main
+import app.main as main
 from unittest.mock import Mock
 
 def test_husky_button_shows_husky(monkeypatch):
