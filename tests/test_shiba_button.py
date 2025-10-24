@@ -2,6 +2,7 @@ import re
 import app.main as main
 from unittest.mock import Mock
 
+
 def test_shiba_button_shows_shiba(monkeypatch):
     fake = Mock()
     fake.status_code = 200

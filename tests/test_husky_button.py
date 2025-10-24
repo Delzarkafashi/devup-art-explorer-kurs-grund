@@ -1,7 +1,7 @@
-# tests/test_husky.py
 import re
 import app.main as main
 from unittest.mock import Mock
+
 
 def test_husky_button_shows_husky(monkeypatch):
     # Fejka Dog API-svar för husky (lista -> appen väljer en)
@@ -18,7 +18,9 @@ def test_husky_button_shows_husky(monkeypatch):
 
     # Säkerställ att koden verkligen anropar husky-endpointen
     def fake_get(url, *args, **kwargs):
-        assert "breed/husky/images" in url, "Ska hämta husky-API:t"
+        assert "breed/husky/images" in url, (
+            "Ska hämta husky-API:t"
+        )
         return fake
 
     monkeypatch.setattr(main, "requests", Mock(get=fake_get))
