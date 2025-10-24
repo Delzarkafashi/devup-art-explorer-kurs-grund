@@ -52,7 +52,10 @@ def shiba():
 @app.post("/bulldog-french")
 def bulldog_french():
     try:
-        r = requests.get("https://dog.ceo/api/breed/bulldog/french/images", timeout=10)
+        r = requests.get(
+        "https://dog.ceo/api/breed/bulldog/french/images",
+        timeout=10
+        )
         r.raise_for_status()
         pics = r.json().get("message", [])
         img_url = random.choice(pics) if pics else None
