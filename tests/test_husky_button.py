@@ -18,7 +18,9 @@ def test_husky_button_shows_husky(monkeypatch):
 
     # Säkerställ att koden verkligen anropar husky-endpointen
     def fake_get(url, *args, **kwargs):
-        assert "breed/husky/images" in url, "Ska hämta husky-API:t"
+        assert "breed/husky/images" in url, (
+            "Ska hämta husky-API:t"
+        )
         return fake
 
     monkeypatch.setattr(main, "requests", Mock(get=fake_get))
@@ -32,4 +34,3 @@ def test_husky_button_shows_husky(monkeypatch):
     assert m, "Ingen hundbild renderades"
     src = m.group(1)
     assert "husky" in src, "Bilden ser inte ut att vara en husky"
-``
