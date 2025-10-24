@@ -53,8 +53,8 @@ def shiba():
 def bulldog_french():
     try:
         r = requests.get(
-        "https://dog.ceo/api/breed/bulldog/french/images",
-        timeout=10
+            "https://dog.ceo/api/breed/bulldog/french/images",
+            timeout=10
         )
         r.raise_for_status()
         pics = r.json().get("message", [])
