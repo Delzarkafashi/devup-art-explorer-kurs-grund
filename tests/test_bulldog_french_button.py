@@ -16,7 +16,9 @@ def test_bulldog_french_button_shows_bulldog_french(monkeypatch):
     }
 
     def fake_get(url, *args, **kwargs):
-        assert "breed/bulldog/french/images" in url, "Ska hämta bulldog/french-API:t"
+        assert "breed/bulldog/french/images" in url, (
+            "Ska hämta bulldog/french-API:t"
+        )
         return fake
 
     monkeypatch.setattr(main, "requests", Mock(get=fake_get))
@@ -29,4 +31,6 @@ def test_bulldog_french_button_shows_bulldog_french(monkeypatch):
     m = re.search(r'<img[^>]*id="dog-pic"[^>]*src="([^"]+)"', html)
     assert m, "Ingen bild renderades"
     src = m.group(1)
-    assert "bulldog" in src and "french" in src, "Bilden ser inte ut att vara bulldog/french"
+    assert (
+        "bulldog" in src and "french" in src
+    ), "Bilden ser inte ut att vara bulldog/french"
