@@ -2,17 +2,31 @@
 <html lang="sv">
   <head>
     <meta charset="utf-8" />
-    <title>{{ title }}</title>
+    <title>Hundbilder – Random</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   </head>
   <body>
     <div class="app">
-        <h3>Hej från Flask – index!</h3>
-            <form>
-                <input type="text" placeholder="Sök konst..." />
-                <button type="button">Sök</button>
-            </form>
+      <h3>Hundbilder – Random</h3>
+    <form method="post" action="/">
+        <button type="submit" id="show-dog">Visa random hund</button>
+    </form>
+    <form method="post" action="/husky" style="margin-top:10px;">
+        <button type="submit" class="btn">husky</button>
+    </form>
+    <form method="post" action="/pug" style="margin-top:10px;">
+        <button type="submit" class="btn">pug</button>
+    </form>
+    <form method="post" action="/shiba" style="margin-top:10px;">
+        <button type="submit" class="btn">shiba</button>
+    </form>
+    <form method="post" action="/bulldog-french" style="margin-top:10px;">
+        <button type="submit" class="btn">bulldog/french</button>
+    </form>
+      {% if error %}<p class="muted">Fel: {{ error }}</p>{% endif %}
+      {% if image_url %}
+        <div class="img-frame"><img id="dog-pic" src="{{ image_url }}" alt="Hund"></div>
+      {% endif %}
     </div>
-
   </body>
 </html>
