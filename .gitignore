@@ -1,0 +1,45 @@
+# === Python / Flask ===
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+instance/
+.env
+.env.*
+.venv/
+venv/
+env/
+
+# === Databaser / data ===
+*.db
+*.sqlite
+*.sqlite3
+
+# === Test / coverage ===
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+.cache/
+
+# === Loggar / temp ===
+*.log
+*.pid
+*.tmp
+
+# === Build / dist ===
+build/
+dist/
+
+# === Editor / OS ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === Frontend (om du lägger till) ===
+node_modules/
